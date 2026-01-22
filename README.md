@@ -115,8 +115,20 @@ Relationships:
 * One‑to‑many: User → Comment
 * One‑to‑many: BlogPost → Comment
 
+### Database Configuration
+
 The default database is **SQLite**, but the app supports other databases via environment configuration.
 
+By default, the application uses a local SQLite database (`posts.db`) for development and testing.
+
+For production or cloud deployment, the database can be configured using an environment variable:
+
+DB_URI=your_database_connection_string
+
+
+If the `DB_URI` variable is not provided, the application automatically falls back to SQLite.
+
+This approach allows flexible deployment without modifying the source code and follows environment-based configuratio
 ---
 
 ## Running the Application Locally
